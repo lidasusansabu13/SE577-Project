@@ -1,0 +1,91 @@
+@import './base.css';
+
+#app {
+
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: black;
+
+  font-weight: normal;
+}
+
+
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+h6{
+  text-align: center;
+}
+
+header h1 {
+  font-size: 70px;
+  font-weight: 600;
+  /* background-image: conic-gradient(#3c9a5a, #2bee52, #00c2cb); */
+  background-image: linear-gradient(to left, #238335, #dde9e0);
+  text-shadow: 2px 2px 4px rgba(68, 134, 121, 0.1),
+               3px 4px 4px rgba(51, 83, 85, 0.15),
+               4px 6px 4px rgba(83, 146, 152, 0.2),
+               5px 8px 4px rgab(179, 147, 211, 0.25);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+}
+
+.container-title {
+  text-align: center;
+  padding: 0 !important;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.inlineForm
+{
+    display:inline;
+}
+
+.info {
+	
+	text-align: left;
+	padding: 15px;
+	margin-top: 30px;
+}
+
+.info ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+  text-align: center;
+}
+.info ul li {
+	border: 1px solid #231E39;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 0 7px 7px 0;
+	padding: 7px;
+  
+}
+
+
+
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+
+
+
+}
