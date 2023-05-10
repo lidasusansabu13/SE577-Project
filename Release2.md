@@ -39,4 +39,6 @@
 * Python Flask
 
 ## Highlevel architecture diagram
-![Highlevel architecture diagram](https://github.com/lidasusansabu13/SE577-Project/blob/proj-Release-2/GitManagerArchitecture.jpg)
+![Highlevel architecture diagram][def]
+
+[def]: https://github.com/lidasusansabu13/SE577-Project/blob/proj-Release-2/GitManagerArchitecture.jpg
