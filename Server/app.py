@@ -20,7 +20,7 @@ def welcome():
     return "Server is working...."
 
 @app.errorhandler(404)
-def invalid_route():
+def invalid_route(error):
     return jsonify({'errorCode' : 404, 'message' : 'Route not found!'}), 404
 
 if __name__ == '__main__':
