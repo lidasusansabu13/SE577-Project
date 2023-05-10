@@ -21,6 +21,7 @@
 3. In a separate terminal window, navigate to the `github-web-service` directory and run `yarn dev` to start the frontend development server
 4. Open your web browser and navigate to `http://localhost:8080/repositories` to get all repositories data
 5. Open your web browser and navigate to Vue.js app
+6. The Projects page in the Vue.js app displays the list of Repositories. Should I change the name of the page to Repositories from Projects?
 
 ## Features
 
