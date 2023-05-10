@@ -1,9 +1,6 @@
-# SE577-Project
-My course project for SE577 Software Architecture goes here. The course project will involve building a web based, cloud native, front end to GitHub.
-## About Me
-Hello everyone! My name is Lida Susan Sabu. I'm currently pursuing my master's degree in software engineering, and I'm taking this class to gain a better understanding of Software Architecture. I believe that improving my knowledge of these concepts will help me become a better software engineer. I would like to learn best practices for designing and documenting software architectures and understand how to evaluate and choose between different software architectures for a given project. Before joining Drexel, I worked as a Software Engineer and gained experience working with Python frameworks like Flask and FastAPI. I am looking forward to gaining hands-on experience with software architecture tools and frameworks that are commonly used in industry.
 
-#Project Details
+
+# Project Details -  instructions to run and test the application.
 
 ## Prerequisites
 

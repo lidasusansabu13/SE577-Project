@@ -1,12 +1,26 @@
 <template>
     <h6> This is the Projects page. This page displays all repositories of the user. I will be using <a
             href="https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-organization-repositories"
-            target="_blank">List organization repositories API</a>. Most information in this page will be clickable. Now its just hard coded.  </h6>
+            target="_blank">List organization repositories API</a>. Most information in this page will be clickable. Now its
+        just hard coded. </h6>
     <div class="container">
         <p class="container-title">Here are Your Projects </p>
 
         <div class="gradient-cards">
-            <div class="card">
+            <div class="card" v-for="repo in repositoryData" :key="repo.id">
+                <div class="container-card">
+                    <p class="card-title">{{ repo.name }}</p>
+                    <p class="card-description">{{ repo.description }}</p>
+                    <div class="info">
+                        <ul>
+                            <li>{{ repo.issues }} Issues</li>
+                            <li>{{ repo.forks }} Forks</li>
+                            <li>{{ repo.language }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="card">
                 <div class="container-card">
 
                     <p class="card-title">SE577-Project </p>
@@ -21,39 +35,9 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="card">
-                <div class="container-card ">
 
-                    <p class="card-title">FlashRewind</p>
-                    <p class="card-description">A Flashcard-based Study Tool</p>
-                    <div class="info">
-                        <ul>
-                            <li>5 Issues</li>
-                            <li>13 Forks</li>
-                            <li>Python</li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="container-card">
-
-                    <p class="card-title">Hand tracker</p>
-                    <p class="card-description">Program to track hand movements using mediapipe and open CV</p>
-                    <div class="info">
-                        <ul>
-                            <li>5 Issues</li>
-                            <li>13 Forks</li>
-                            <li>Python</li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
 
         </div>
@@ -67,7 +51,21 @@ export default {
 </script>
     
 <script setup lang="ts">
-    //Most code goes here
+//Most code goes here
+import { onMounted, ref } from 'vue';
+import type { RepositoryApiInterface } from './ApiInterfaces';
+import axios from 'axios';
+
+let repositoryData = ref<RepositoryApiInterface[]>([]);
+
+onMounted(async () => {
+    let allReposURI = 'http://localhost:8080/repositories'
+    let repositoryAPI = await axios.get<RepositoryApiInterface[]>(allReposURI)
+    // If OK, set the repositoryData variable.
+    if (repositoryAPI.status == 200) {
+        repositoryData.value = repositoryAPI.data
+    }
+});
 </script>
     
     <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -125,7 +123,7 @@ body {
     border-radius: 45px;
     padding: 40px;
 
-    
+
 }
 
 
@@ -151,6 +149,4 @@ body {
     font-size: 16px;
     max-width: 470px;
 }
-
-
 </style>

@@ -9,7 +9,7 @@
     <h3>Lida Susan Sabu</h3>
     <h6>lidasusansabu13</h6>
     <h6>lidasusansabu13@gmail.com</h6>
-    <p>User interface designer and <br /> front-end developer</p>
+    <p>Python Developer and <br /> Software Designer</p>
     <div class="info">
       <ul>
         <li>5 Followers</li>
