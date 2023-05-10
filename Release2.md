@@ -37,3 +37,6 @@
 
 * Vue.js
 * Python Flask
+
+## Highlevel architecture diagram
+![Highlevel architecture diagram](/Users/lidasusansabu/Desktop/SE577/SE577-Project/GitManagerArchitecture.jpg)
