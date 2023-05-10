@@ -1,0 +1,24 @@
+[
+    {
+      "name": "FlashRewind",
+      "url": "https://github.com/lidasusansabu13/FlashRewind",
+      "description": "A Flashcard-based Study Tool",
+      "contributors": "lidasusansabu13, shub2020",
+      "languages": "HTML, CSS, JavaScript, Python"
+    },
+    {
+      "name": "HandTracker",
+      "url": "https://github.com/lidasusansabu13/HandTracker",
+      "description": "Program to track hand movements using mediapipe and open CV",
+      "contributors": "lidasusansabu13",
+      "languages": "Python"
+    },
+    {
+      "name": "Phishing-detection-project",
+      "url": "https://github.com/lidasusansabu13/Phishing-detection-project",
+      "description": "Phishing website detection using extreme learning machine",
+      "contributors": "lidasusansabu13",
+      "languages": "Python"
+    }
+  ]
+  
