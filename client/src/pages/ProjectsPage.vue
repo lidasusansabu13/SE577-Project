@@ -13,33 +13,13 @@
                     <p class="card-description">{{ repo.description }}</p>
                     <div class="info">
                         <ul>
-                            <li>{{ repo.issues }} Issues</li>
+                            <li>{{ repo.open_issues }} Issues</li>
                             <li>{{ repo.forks }} Forks</li>
                             <li>{{ repo.language }}</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <!-- <div class="card">
-                <div class="container-card">
-
-                    <p class="card-title">SE577-Project </p>
-                    <p class="card-description">My course project for SE577 Software Architecture goes here. The course
-                        project will involve building a web based, cloud native, front end to GitHub.</p>
-                    <div class="info">
-                        <ul>
-                            <li>5 Issues</li>
-                            <li>13 Forks</li>
-                            <li>Vue</li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-
-
-
-
         </div>
     </div>
 </template>

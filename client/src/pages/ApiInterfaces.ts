@@ -2,7 +2,7 @@ export interface RepositoryApiInterface {
     id: number;
     name: string;
     description: string;
-    issues: number;
+    open_issues: number;
     forks: number;
     language: string;
 
