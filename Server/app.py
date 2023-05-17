@@ -1,19 +1,21 @@
-from flask import Flask
-import os
-from flask import Flask, json, jsonify
+
+from flask import Flask, jsonify
 from flask_cors import CORS
+from proxy import GithubProxy
 
 app = Flask(__name__)
 app.config.from_object(__name__)
+app.config['JSON_SORT_KEYS'] = False
 
 # Enable CORS.
 CORS(app, resources={r'/*': {'origins': '*'}})
 
+proxy = GithubProxy()
+
 @app.route('/repositories', methods=['GET'])
 def repositories():
-    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-    json_url = os.path.join(SITE_ROOT, 'static', 'repositories.json')
-    return json.load(open(json_url))
+    repositories = proxy.get_data('user/repos')
+    return jsonify(repositories)
 
 @app.route('/', methods=['GET'])
 def welcome():
