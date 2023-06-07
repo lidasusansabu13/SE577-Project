@@ -42,12 +42,17 @@ GH_API_URL=https://api.github.com/`
 
 ## Features
 
-* Feature 1: Under `/repositories` page, to get all repositories data
+* Feature 1: Under `/projects` page, to get all repositories data
+* Feature 2: Under `/home` page, to get the users information.
+* Feature 3: Under `/pr` page, to get the open PR's.
 
 
 ## API Endpoints
 
 *  `http://localhost:8080/repositories`: Get all repositories data.
+*  `http://localhost:8080/user`: Get all user data.
+*  `http://localhost:8080/pr`: List open Pull Requests.
+
 
 
 ## Technologies Used
