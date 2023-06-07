@@ -1,8 +1,5 @@
 <template>
-    <h6> This is the Projects page. This page displays all repositories of the user. I will be using <a
-            href="https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-organization-repositories"
-            target="_blank">List organization repositories API</a>. Most information in this page will be clickable. Now its
-        just hard coded. </h6>
+    
     <div class="container">
         <p class="container-title">Here are Your Projects </p>
 

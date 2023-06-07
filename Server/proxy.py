@@ -24,3 +24,6 @@ class GithubProxy:
         except requests.exceptions.RequestException as error:
             print(f"Error occurred: {error}")
             return None
+
+    
+        

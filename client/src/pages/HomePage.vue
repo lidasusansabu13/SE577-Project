@@ -1,20 +1,17 @@
 <template>
-  <h6> This is the home page. This page displays information about the user using githubs <a
-      href="https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#get-a-user" target="_blank">get a user
-      API</a>. So this application should have a user Sign in and sign up right ?</h6>
 
   <div class="card-container">
 
-    <img class="round" src="https://avatars.githubusercontent.com/u/25691275?v=4" alt="user" />
-    <h3>Lida Susan Sabu</h3>
-    <h6>lidasusansabu13</h6>
-    <h6>lidasusansabu13@gmail.com</h6>
-    <p>Python Developer and <br /> Software Designer</p>
+    <img class="round" :src="userData.avatar_url" alt="user" />
+    <h3>{{ userData.name }}</h3>
+    <h6>{{ userData.login }}</h6>
+    <h6>{{ userData.email }}</h6>
+    <p>{{ userData.bio }}..</p>
     <div class="info">
       <ul>
-        <li>5 Followers</li>
-        <li>13 Following</li>
-        <li>17 Repositories</li>
+        <li>{{ userData.followers }} Followers</li>
+        <li>{{ userData.following }} Following</li>
+        <li>{{ userData.public_repos }} Repositories</li>
         
       </ul>
     </div>
@@ -29,9 +26,22 @@ export default {
 </script>
     
 <script setup lang="ts">
-    //Most code goes here
+//Most code goes here
+import { onMounted, ref } from 'vue';
+import type { UserApiInterface } from './ApiInterfaces';
+import axios from 'axios';
+
+let userData = ref<UserApiInterface[]>([]);
+
+onMounted(async () => {
+    let userURI = 'http://localhost:8080/user'
+    let userAPI = await axios.get<UserApiInterface[]>(userURI)
+    // If OK, set the userData variable.
+    if (userAPI.status == 200) {
+      userData.value = userAPI.data
+    }
+});
 </script>
-  
     
     <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

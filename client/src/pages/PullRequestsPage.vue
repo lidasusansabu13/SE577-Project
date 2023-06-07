@@ -1,46 +1,22 @@
 <template>
-    <h6> This page lists all the pull requests that needs to be reviewed in all the repositories. This page uses using
-        githubs <a href="https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28#list-pull-requests"
-            target="_blank">List pull requests API</a>.</h6>
     <p class="container-title">Here are Your Open Pull Requests </p>
     
     <div class="row">
-        <div class="card">
-            <h4>Added a new json object with is based on node js.</h4>
+        <div class="card"  v-for="pr in prData" :key="pr.number">
+            <h4>{{ pr.title }}</h4>
             <span class="nowrap">
                 <form class="inlineForm">
-                    <button class="button button1">Repository Name</button>
+                    <button class="button button1">SE-577 Project</button>
 
                 </form>
             
             </span>
             
-            <p>#1275 opened 3 weeks ago by c-mart</p>
+            <p>#{{ pr.number }} opened at {{ pr.created_at }} by lidaSusanSabu13</p>
+            
         </div>
-        <div class="card">
-            <h4>Changed the robot repo for cdnjs cdnjs/cdnjs to the human repo cdnjs/packages</h4>
-            <span class="nowrap">
-                <form class="inlineForm">
-                    <button class="button button1">Repository Name</button>
-
-                </form>
-            
-            </span>
-            
-            <p>#125 opened 3 weeks ago by martin12</p>
-        </div>
-        <div class="card">
-            <h4>Changed the robot repo for cdnjs cdnjs/cdnjs to the human repo cdnjs/packages</h4>
-            <span class="nowrap">
-                <form class="inlineForm">
-                    <button class="button button1">Repository Name</button>
-
-                </form>
-            
-            </span>
-            
-            <p>#125 opened 3 weeks ago by martin12</p>
-        </div>
+        
+        
     </div>
 </template>
     
@@ -51,8 +27,23 @@ export default {
 </script>
     
 <script setup lang="ts">
-    //Most code goes here
+//Most code goes here
+import { onMounted, ref } from 'vue';
+import type { PrApiInterface } from './ApiInterfaces';
+import axios from 'axios';
+
+let prData = ref<PrApiInterface[]>([]);
+
+onMounted(async () => {
+    let allPrURI = 'http://localhost:8080/pr'
+    let prAPI = await axios.get<PrApiInterface[]>(allPrURI)
+    // If OK, set the repositoryData variable.
+    if (prAPI.status == 200) {
+        prData.value = prAPI.data
+    }
+});
 </script>
+    
     
     <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
@@ -76,7 +67,9 @@ body {
   min-height: 100vh;
   user-select: none;
 }
-
+.row{
+    height: 700px;
+}
 .card {
   border-radius: 10px;
   filter: drop-shadow(0 5px 10px 0 #070c0a);

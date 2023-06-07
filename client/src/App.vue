@@ -15,7 +15,6 @@ import PullRequestsPage from './pages/PullRequestsPage.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
         <RouterLink to="/pr">Pull Requests</RouterLink>
-        <RouterLink to="/issues">Issues</RouterLink>
       </nav>
       <hr/>
   </header>

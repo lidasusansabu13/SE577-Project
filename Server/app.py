@@ -17,6 +17,21 @@ def repositories():
     repositories = proxy.get_data('user/repos')
     return jsonify(repositories)
 
+
+@app.route('/user', methods=['GET'])
+def user():
+    user = proxy.get_data('users/lidasusansabu13')
+    return jsonify(user)
+
+@app.route('/pr', methods=['GET'])
+def pr():
+    owner = 'lidasusansabu13'
+    repo = 'SE577-Project'
+    pr = proxy.get_data(f'repos/{owner}/{repo}/pulls')
+    return jsonify(pr)
+
+
+
 @app.route('/', methods=['GET'])
 def welcome():
     return "Server is working...."

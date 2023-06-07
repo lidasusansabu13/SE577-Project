@@ -12,7 +12,7 @@
 1. Clone the repository `https://github.com/lidasusansabu13/SE577-Project.git`
 2. Navigate to the cloned repo using the command `cd SE577-Project`
 3. Type the command `git pull` to get all latest updates.
-4. Type the command `git checkout proj-Release-3` to switch  to `proj-Release-3` branch
+4. Type the command `git checkout proj-final` to switch  to `proj-final` branch
 5. If you run the `ls` command you can see the folder structure:
 ```
 ├── Server
@@ -24,7 +24,7 @@
 └── Readme.md
 ```
 6. Make sure you have Python 3.x installed you can use these commanda `$ sudo apt-get update
-$ sudo apt-get install python3.6`
+ $ sudo apt-get install python3.6`
 7. You can make use of a virtual envirnment to avoid installation issues `python3 -m venv se577venv ` and activate it by using the command `source bin/activate  ` after moving to the directory using `cd se577venv` after that `cd ..` 
 
 8. Navigate to the `Server` directory and run `pip install -r requirements.txt` to install the necessary dependencies for the backend
